@@ -1,0 +1,233 @@
+/* ===================================================
+   TEMA GLOBAL
+=================================================== */
+
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+  transition: 0.3s;
+}
+
+.light-mode {
+  background: #f3f3f3;
+  color: #111;
+}
+
+/* ===================================================
+   LAYOUT
+=================================================== */
+
+.app-container {
+  max-width: 500px;
+  margin: auto;
+  padding-bottom: 120px;
+}
+
+.login-screen {
+  padding: 20px;
+}
+
+.login-card {
+  max-width: 420px;
+  width: 100%;
+  margin: auto;
+}
+
+/* ===================================================
+   CARDS
+=================================================== */
+
+.card-custom {
+  background: #1c1c1c;
+  border-radius: 20px;
+  box-shadow:0 5px 20px rgba(47, 0, 255, 0.4);
+}
+
+.light-mode .card-custom {
+  background: white;
+}
+
+.timer-card {
+  background: linear-gradient(135deg, #6c5ce7, #8e44ad);
+  padding: 30px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.subject-card {
+  padding: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subject-card p {
+  color: gray;
+  margin: 0;
+}
+
+.profile-card {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===================================================
+   PERFIL
+=================================================== */
+
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  background: #6c5ce7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ===================================================
+   FORMULÁRIOS
+=================================================== */
+
+.custom-input {
+  background: #2a2a2a;
+  border: none;
+  color: white;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.custom-input::placeholder {
+  color: #bdbdbd;
+}
+
+.custom-input:focus {
+  background: #333;
+  color: white;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.3);
+}
+
+/* ===================================================
+   ANOTAÇÕES
+=================================================== */
+
+.notes-area {
+  height: 150px;
+  background: #2a2a2a;
+  border: none;
+  color: white;
+  border-radius: 16px;
+  padding: 15px;
+  resize: none;
+}
+
+.notes-area::placeholder {
+  color: #bdbdbd;
+}
+
+.notes-area:focus {
+  background: #333;
+  color: white;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.3);
+}
+
+/* ===================================================
+   BOTÕES
+=================================================== */
+
+.btn-main,
+.btn-register{
+    background: transparent;
+    border: 2px solid #6c5ce7;
+    color: #6c5ce7;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.btn-main:hover,
+.btn-register:hover{
+    background: #6c5ce7;
+    color: white;
+}
+
+.btn-theme {
+  background: #c5b3b3;
+  color: white;
+  border-radius: 12px;
+}
+
+.btn-register {
+  background: transparent;
+  border: 2px solid #6c5ce7;
+  color: #6c5ce7;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.btn-register:hover {
+  background: #6c5ce7;
+  color: white;
+}
+
+.btn-back {
+  background: #2d3436;
+  border: none;
+  color: white;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #444;
+}
+
+
+/* ===================================================
+   NAVEGAÇÃO INFERIOR
+=================================================== */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  background: #1c1c1c;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 5px 20px rgba(47, 0, 255, 0.4);
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+}
+
+/* ===================================================
+   MODO CLARO
+=================================================== */
+
+.light-mode .custom-input,
+.light-mode .notes-area {
+  background: white;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+.light-mode .custom-input::placeholder,
+.light-mode .notes-area::placeholder {
+  color: #666;
+}
