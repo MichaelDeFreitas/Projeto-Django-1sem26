@@ -1,6 +1,6 @@
-📚 Study Notes - Bloco de Notas de Estudos
+# 📚 Study Notes - Bloco de Notas de Estudos
 
-📖 Sobre o Projeto
+## 📖 Sobre o Projeto
 
 O Study Notes é um sistema desenvolvido como Projeto Integrador, com a proposta de auxiliar estudantes na organização dos seus estudos por meio de um bloco de notas privado e individual.
 
@@ -8,9 +8,9 @@ Cada usuário possui um ambiente exclusivo e seguro, onde pode registrar informa
 
 O sistema busca incentivar a organização dos estudos, melhorar o gerenciamento do tempo e facilitar o acompanhamento do desempenho individual.
 
-⸻
+---
 
-🎯 Objetivo do Projeto
+## 🎯 Objetivo do Projeto
 
 O principal objetivo do sistema é oferecer uma plataforma onde os usuários possam:
 
@@ -22,18 +22,18 @@ O principal objetivo do sistema é oferecer uma plataforma onde os usuários pos
 
 Dessa forma, o sistema auxilia estudantes a desenvolverem maior disciplina e controle sobre sua rotina de aprendizado.
 
-⸻
+---
 
-⚙️ Funcionalidades
+## ⚙️ Funcionalidades
 
-👤 Sistema de Usuário
+### 👤 Sistema de Usuário
 
 * Cadastro de usuário;
 * Login seguro;
 * Área privada individual para cada usuário;
 * Proteção das informações pessoais.
 
-📝 Bloco de Notas Privado
+### 📝 Bloco de Notas Privado
 
 Cada usuário possui seu próprio bloco de notas privado, onde pode:
 
@@ -42,11 +42,11 @@ Cada usuário possui seu próprio bloco de notas privado, onde pode:
 * Salvar anotações relacionadas aos estudos;
 * Editar ou remover matérias cadastradas.
 
-⏱️ Temporizador de Estudos
+### ⏱️ Temporizador de Estudos
 
 O sistema conta com um temporizador integrado, permitindo que o usuário acompanhe o tempo de estudo em tempo real, auxiliando no foco e produtividade.
 
-📊 Controle de Matérias
+### 📊 Controle de Matérias
 
 O usuário pode visualizar:
 
@@ -54,35 +54,33 @@ O usuário pode visualizar:
 * Histórico das matérias estudadas;
 * Tempo dedicado aos estudos.
 
-⸻
+---
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-* HTML5 → Estrutura da aplicação;
-* CSS3 → Estilização da interface;
-* JavaScript → Funcionalidades dinâmicas e temporizador;
-* PHP → Regras de negócio e backend;
-* MySQL → Banco de dados do sistema;
-* Bootstrap → Responsividade e componentes visuais.
+* **HTML5** → Estrutura da aplicação;
+* **CSS3** → Estilização da interface;
+* **JavaScript** → Funcionalidades dinâmicas e temporizador;
+* **Python** → Linguagem de programação backend;
+* **Django** → Framework web para regras de negócio e backend;
+* **MySQL** → Banco de dados do sistema;
+* **Bootstrap** → Responsividade e componentes visuais.
 
-⸻
+---
 
-🗄️ Estrutura do Banco de Dados
+## 🗄️ Estrutura do Banco de Dados
 
 O sistema possui funcionalidades voltadas ao gerenciamento de estudos dos usuários, incluindo:
 
-Usuários
-
+**Usuários**
 Armazena informações de login e autenticação.
 
-Matérias
-
+**Matérias**
 Armazena as matérias cadastradas pelos usuários.
 
-Sessões de Estudo
-
+**Sessões de Estudo**
 Registra:
 
 * Tempo estudado;
@@ -90,19 +88,18 @@ Registra:
 * Data da sessão;
 * Duração do estudo.
 
-Temporizador
-
+**Temporizador**
 Auxilia no acompanhamento do tempo de estudo do usuário.
 
-⸻
+---
 
-🔐 Privacidade
+## 🔐 Privacidade
 
 Cada usuário possui acesso apenas às suas próprias informações, garantindo um ambiente privado e seguro para organização dos estudos.
 
-⸻
+---
 
-🚀 Possíveis Melhorias Futuras
+## 🚀 Possíveis Melhorias Futuras
 
 * Sistema de metas de estudo;
 * Dashboard com gráficos de desempenho;
@@ -112,14 +109,14 @@ Cada usuário possui acesso apenas às suas próprias informações, garantindo 
 * Categorias de matérias;
 * Histórico detalhado de desempenho.
 
-⸻
+---
 
-👨‍💻 Equipe do Projeto
+## 👨‍💻 Equipe do Projeto
 
 Projeto desenvolvido como atividade acadêmica do Projeto Integrador, com foco em organização dos estudos e produtividade dos usuários.
 
-⸻
+---
 
-📌 Considerações Finais
+## 📌 Considerações Finais
 
-O Study Notes foi idealizado para ser uma ferramenta simples, intuitiva e eficiente, ajudando estudantes a manterem uma rotina de estudos mais organizada através do registro das matérias estudadas, controle de tempo e gerenciamento individual das informa
+O Study Notes foi idealizado para ser uma ferramenta simples, intuitiva e eficiente, ajudando estudantes a manterem uma rotina de estudos mais organizada através do registro das matérias estudadas, controle de tempo e gerenciamento individual das informações acadêmicas.
