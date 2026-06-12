@@ -8,24 +8,26 @@ O StudyFlow permite que cada usuário tenha acesso somente às próprias anotaç
 
 ## Funcionalidades
 
-- Cadastro, login e logout de usuários.
-- Dashboard privado por usuário.
-- Cadastro, edição e exclusão de anotações.
-- Organização das anotações por matéria/categoria.
-- Meta diária de estudo configurável no perfil.
-- Temporizador de estudo com salvamento de sessão.
-- Histórico agrupado por dia.
-- Progresso da meta diária.
-- Painel administrativo do Django.
+* Cadastro, login e logout de usuários.
+* Dashboard privado por usuário.
+* Cadastro, edição e exclusão de anotações.
+* Organização das anotações por matéria/categoria.
+* Meta diária de estudo configurável no perfil.
+* Temporizador de estudo com salvamento de sessão.
+* Histórico agrupado por dia.
+* Progresso da meta diária.
+* Busca no histórico por data, matéria, título ou descrição da anotação.
+* Cadastro de usuário bloqueando espaços e caracteres especiais no nome de usuário.
+* Painel administrativo do Django.
 
 ## Tecnologias
 
-- Python
-- Django
-- SQLite
-- HTML
-- CSS
-- JavaScript
+* Python
+* Django
+* SQLite
+* HTML
+* CSS
+* JavaScript
 
 ## Como rodar o projeto
 
@@ -97,34 +99,20 @@ Acesse no navegador:
 http://127.0.0.1:8000/
 ```
 
-## Como enviar alterações para o GitHub
+## Regras do sistema
 
-Depois que o repositório já estiver conectado, use:
-
-```bash
-git add .
-git commit -m "Atualiza StudyFlow"
-git push
-```
-
-## O que não deve subir para o GitHub
-
-O arquivo `.gitignore` já evita subir arquivos como:
-
-- `venv/`
-- `db.sqlite3`
-- `.env`
-- `__pycache__/`
-- `staticfiles/`
-- `media/`
+* Cada usuário visualiza somente suas próprias anotações.
+* Cada usuário possui sua própria meta diária.
+* As sessões de estudo salvas ficam vinculadas ao usuário logado.
+* O nome de usuário aceita apenas letras, números e underline `_`.
+* O sistema bloqueia cadastro de usuário com espaços ou caracteres especiais.
 
 ## Status
 
-Projeto funcional com fluxo principal completo: usuário privado, anotações, meta diária, temporizador e histórico.
-
+Projeto funcional com fluxo principal completo: usuário privado, anotações, meta diária, temporizador, histórico e busca.
 
 ## Melhorias recentes
 
-- Busca no histórico por data, matéria, título ou descrição da anotação.
-- Cadastro de usuário bloqueando espaços e caracteres especiais no nome de usuário.
-- O nome de usuário agora aceita apenas letras, números e underline (_).
+* Busca no histórico por data, matéria, título ou descrição da anotação.
+* Cadastro de usuário bloqueando espaços e caracteres especiais no nome de usuário.
+* O nome de usuário agora aceita apenas letras, números e underline `_`.
