@@ -1,0 +1,75 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Criar Anotação
+{% endblock %}
+
+{% block content %}
+
+<div class="login-screen">
+    <div class="card-custom login-card">
+        <div style="padding:40px;">
+            <div style="text-align:center;">
+                <h1>Nova Anotação</h1>
+
+                <p style="color:gray;">
+                    Registre seus estudos e organize seu conhecimento
+                </p>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div style="margin-bottom:20px;">
+                    <input
+                        class="custom-input"
+                        type="text"
+                        name="titulo"
+                        placeholder="Título da anotação"
+                        required
+                        style="width:100%;box-sizing:border-box;"
+                    >
+                </div>
+
+                <div style="margin-bottom:20px;">
+                    <input
+                        class="custom-input"
+                        type="text"
+                        name="categoria"
+                        list="categorias"
+                        placeholder="Matéria ou categoria. Ex: Django, Matemática, Banco de Dados"
+                        style="width:100%;box-sizing:border-box;"
+                    >
+
+                    <datalist id="categorias">
+                        {% for categoria in categorias %}
+                            <option value="{{ categoria.nome }}">
+                        {% endfor %}
+                    </datalist>
+                </div>
+
+                <div style="margin-bottom:25px;">
+                    <textarea
+                        class="notes-area"
+                        name="descricao"
+                        placeholder="Escreva aqui suas anotações..."
+                        required
+                        style="width:100%;box-sizing:border-box;"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn-register" style="width:100%;padding:14px;">
+                    Salvar Anotação
+                </button>
+            </form>
+
+            <div style="margin-top:20px;text-align:center;">
+                <a href="/dashboard/" style="color:#6c5ce7;text-decoration:none;">
+                    ← Voltar ao Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <div class="top-bar">
+        <div>
+            <h1>StudyFlow</h1>
+            <p style="color:gray;">
+                Bem-vindo, {{ request.user.username }}. Organize seus estudos do dia.
+            </p>
+        </div>
+
+        <div class="top-links">
+            <a href="/historico/" class="link-btn">Histórico</a>
+            <a href="/perfil/" class="link-btn">Perfil</a>
+            <a href="/logout/" class="logout-btn">Sair</a>
+        </div>
+    </div>
+
+    <div class="profile-card card-custom">
+        <div class="profile-avatar">
+            {{ request.user.username|first|upper }}
+        </div>
+
+        <div>
+            <h3 style="margin:0;">
+                {{ request.user.first_name|default:request.user.username }}
+            </h3>
+
+            <p style="margin:5px 0;color:gray;">
+                Meta diária: {{ perfil.meta_diaria|default:"4" }}h • Progresso de hoje: {{ progresso }}%
+            </p>
+
+            <a href="/perfil/" style="color:#a29bfe;text-decoration:none;">
+                Alterar meta diária
+            </a>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="stats-grid">
+        <div class="stat-card card-custom">
+            <span>Meta diária</span>
+            <strong>{{ perfil.meta_diaria|default:"4" }}h</strong>
+        </div>
+
+        <div class="stat-card card-custom">
+            <span>Estudado hoje</span>
+            <strong>{{ horas_hoje_formatadas }}</strong>
+        </div>
+
+        <div class="stat-card card-custom">
+            <span>Sessões hoje</span>
+            <strong>{{ total_sessoes_hoje }}</strong>
+        </div>
+
+        <div class="stat-card card-custom">
+            <span>Anotações hoje</span>
+            <strong>{{ anotacoes_hoje }}</strong>
+        </div>
+
+        <div class="stat-card card-custom">
+            <span>Total de anotações</span>
+            <strong>{{ total_anotacoes }}</strong>
+        </div>
+
+        <div class="stat-card card-custom">
+            <span>Matérias</span>
+            <strong>{{ total_categorias }}</strong>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="timer-card">
+        <h2>Temporizador de Estudo</h2>
+
+        <h1 id="timer">00:00:00</h1>
+
+        <p>
+            Faltam aproximadamente {{ faltam_formatadas }} para bater sua meta de hoje.
+        </p>
+
+        <div class="progress-container">
+            <div class="progress-bar" style="width: {{ progresso }}%;"></div>
+        </div>
+
+        <p class="progress-text">{{ progresso }}% da meta concluída</p>
+
+        <div class="timer-actions">
+            <button type="button" onclick="startTimer()">Iniciar</button>
+            <button type="button" onclick="stopTimer()">Pausar</button>
+            <button type="button" onclick="resetTimer()">Zerar</button>
+            <button type="button" onclick="saveSession()">Salvar sessão</button>
+        </div>
+
+        <p id="timer-message" class="timer-message"></p>
+        <small class="timer-hint">Dica: salve a sessão quando terminar o estudo para ela aparecer no histórico.</small>
+    </div>
+
+    <br>
+
+    <div class="section-header">
+        <div>
+            <h2>Últimas anotações</h2>
+            <p style="color:gray; margin-top:4px;">Mostrando suas anotações mais recentes.</p>
+        </div>
+
+        <a href="/criar-anotacao/" class="nova-btn">
+            + Nova Anotação
+        </a>
+    </div>
+
+    <div class="cards">
+        {% for anotacao in anotacoes %}
+
+        <div class="card subject-card">
+            <div>
+                <h2>
+                    {{ anotacao.titulo }}
+                </h2>
+
+                {% if anotacao.categoria %}
+                    <span class="category-badge">{{ anotacao.categoria.nome }}</span>
+                {% else %}
+                    <span class="category-badge muted">Sem matéria</span>
+                {% endif %}
+
+                <p>
+                    {{ anotacao.descricao|truncatechars:130 }}
+                </p>
+
+                <small>
+                    Criada em {{ anotacao.criada_em|date:"d/m/Y H:i" }}
+                </small>
+            </div>
+
+            <div class="card-actions">
+                <a href="/editar-anotacao/{{ anotacao.id }}/">
+                    Editar
+                </a>
+
+                <form method="POST" action="/excluir-anotacao/{{ anotacao.id }}/" onsubmit="return confirm('Deseja excluir esta anotação?');">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-link">Excluir</button>
+                </form>
+            </div>
+        </div>
+
+        {% empty %}
+
+        <div class="card-custom" style="padding:30px;text-align:center;">
+            <h3>Nenhuma anotação cadastrada</h3>
+
+            <p style="color:gray;">
+                Crie sua primeira anotação para começar.
+            </p>
+        </div>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

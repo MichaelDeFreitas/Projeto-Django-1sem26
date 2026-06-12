@@ -1,0 +1,25 @@
+MELHORIAS APLICADAS NO STUDYFLOW
+
+1. Dashboard privado por usuário.
+2. Meta diária conectada ao perfil do usuário.
+3. Temporizador visível no dashboard.
+4. Temporizador com persistência temporária no navegador.
+5. Salvamento de sessão de estudo no banco.
+6. Histórico agrupado por dia.
+7. Status de meta batida ou pendente no histórico.
+8. Categorias/matérias nas anotações.
+9. Contadores no dashboard: estudado hoje, sessões, anotações e matérias.
+10. Exclusão de anotação via POST com confirmação.
+11. Melhor tratamento de erros nas views.
+12. Validação da meta diária entre 1 e 24 horas.
+13. Validação mínima de 1 minuto para salvar sessão.
+14. README atualizado com passo a passo para rodar.
+15. .gitignore preparado para GitHub.
+
+PRÓXIMAS MELHORIAS POSSÍVEIS
+
+- Gráficos com Chart.js.
+- Filtro de anotações por matéria.
+- Tela separada para gerenciar matérias.
+- Pomodoro completo com ciclos de pausa.
+- Recuperação de senha.

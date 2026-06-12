@@ -1,0 +1,61 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Meu Perfil
+{% endblock %}
+
+{% block content %}
+
+<div class="login-screen">
+    <div class="card-custom login-card">
+        <div style="padding:40px;">
+            <div style="text-align:center;">
+                <div class="profile-avatar" style="margin:auto;margin-bottom:15px;">
+                    {{ request.user.username|first|upper }}
+                </div>
+
+                <h1>Meu Perfil</h1>
+
+                <p style="color:gray;">
+                    Gerencie sua meta diária e seus dados básicos
+                </p>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>{{ form.first_name.label }}</label>
+                    {{ form.first_name }}
+                </div>
+
+                <div class="form-group">
+                    <label>{{ form.last_name.label }}</label>
+                    {{ form.last_name }}
+                </div>
+
+                <div class="form-group">
+                    <label>{{ form.email.label }}</label>
+                    {{ form.email }}
+                </div>
+
+                <div class="form-group">
+                    <label>{{ form.meta_diaria.label }}</label>
+                    {{ form.meta_diaria }}
+                </div>
+
+                <button type="submit" class="btn-register" style="width:100%;padding:14px;">
+                    Salvar Alterações
+                </button>
+            </form>
+
+            <div style="margin-top:20px;text-align:center;">
+                <a href="/dashboard/" style="color:#6c5ce7;text-decoration:none;">
+                    ← Voltar para Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

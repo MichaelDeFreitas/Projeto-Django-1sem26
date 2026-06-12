@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Editar Anotação
+{% endblock %}
+
+{% block content %}
+
+<div class="login-screen">
+    <div class="card-custom login-card">
+        <div style="padding:40px;">
+            <div style="text-align:center;">
+                <h1>Editar Anotação</h1>
+
+                <p style="color:gray;">
+                    Atualize suas informações de estudo
+                </p>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div style="margin-bottom:20px;">
+                    <input
+                        class="custom-input"
+                        type="text"
+                        name="titulo"
+                        value="{{ anotacao.titulo }}"
+                        placeholder="Título da anotação"
+                        required
+                        style="width:100%;box-sizing:border-box;"
+                    >
+                </div>
+
+                <div style="margin-bottom:20px;">
+                    <input
+                        class="custom-input"
+                        type="text"
+                        name="categoria"
+                        list="categorias"
+                        value="{% if anotacao.categoria %}{{ anotacao.categoria.nome }}{% endif %}"
+                        placeholder="Matéria ou categoria"
+                        style="width:100%;box-sizing:border-box;"
+                    >
+
+                    <datalist id="categorias">
+                        {% for categoria in categorias %}
+                            <option value="{{ categoria.nome }}">
+                        {% endfor %}
+                    </datalist>
+                </div>
+
+                <div style="margin-bottom:25px;">
+                    <textarea
+                        class="notes-area"
+                        name="descricao"
+                        required
+                        style="width:100%;box-sizing:border-box;"
+                    >{{ anotacao.descricao }}</textarea>
+                </div>
+
+                <button type="submit" class="btn-register" style="width:100%;padding:14px;">
+                    Salvar Alterações
+                </button>
+            </form>
+
+            <div style="margin-top:20px;text-align:center;">
+                <a href="/dashboard/" style="color:#6c5ce7;text-decoration:none;">
+                    ← Voltar ao Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

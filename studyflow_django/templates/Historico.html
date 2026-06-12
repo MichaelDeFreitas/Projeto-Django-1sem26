@@ -1,0 +1,116 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Histórico de Estudos
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+    <div class="top-bar">
+        <div>
+            <h1>Histórico</h1>
+            <p style="color:gray;">Veja seus dias de estudo, tempo salvo e anotações criadas.</p>
+        </div>
+
+        <a href="/dashboard/" class="link-btn">Voltar</a>
+    </div>
+
+    <form method="GET" class="search-history-form card-custom">
+        <div>
+            <label for="q">Buscar no histórico</label>
+            <p style="color:gray;margin:4px 0 0;">Pesquise por matéria, título, descrição ou data.</p>
+        </div>
+
+        <div class="search-history-actions">
+            <input
+                id="q"
+                class="custom-input"
+                type="text"
+                name="q"
+                value="{{ busca }}"
+                placeholder="Ex: Django, matemática ou 2026-06-12"
+            >
+
+            <button type="submit" class="link-btn">Buscar</button>
+
+            {% if busca %}
+                <a href="/historico/" class="link-btn secondary">Limpar</a>
+            {% endif %}
+        </div>
+    </form>
+
+    {% if busca %}
+        <p style="color:gray;">Resultado da busca por: <strong>{{ busca }}</strong></p>
+    {% endif %}
+
+    <div class="history-list">
+        {% for dia in dias %}
+            <div class="history-day card-custom">
+                <div class="history-day-header">
+                    <div>
+                        <h2>{{ dia.data|date:"d/m/Y" }}</h2>
+                        <p style="color:gray; margin:0;">
+                            {{ dia.tempo_formatado }} estudados • {{ dia.anotacoes }} anotação(ões)
+                        </p>
+                    </div>
+
+                    {% if dia.meta_batida %}
+                        <span class="status-badge success">Meta batida</span>
+                    {% else %}
+                        <span class="status-badge warning">Meta pendente</span>
+                    {% endif %}
+                </div>
+
+                <div class="progress-container small">
+                    <div class="progress-bar" style="width: {{ dia.progresso }}%;"></div>
+                </div>
+                <p class="progress-text">{{ dia.progresso }}% da meta de {{ perfil.meta_diaria }}h</p>
+
+                {% if dia.anotacoes_lista %}
+                    <div class="history-notes">
+                        <h3>Anotações do dia</h3>
+
+                        {% for anotacao in dia.anotacoes_lista %}
+                            <div class="history-note-row">
+                                <strong>{{ anotacao.titulo }}</strong>
+
+                                {% if anotacao.categoria %}
+                                    <span class="category-badge">{{ anotacao.categoria.nome }}</span>
+                                {% else %}
+                                    <span class="category-badge muted">Sem matéria</span>
+                                {% endif %}
+
+                                <p>{{ anotacao.descricao|truncatechars:100 }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div class="session-list">
+                    <h3>Sessões salvas</h3>
+                    {% for sessao in dia.sessoes %}
+                        <div class="session-row">
+                            <span>{{ sessao.inicio|date:"H:i" }} até {{ sessao.fim|date:"H:i" }}</span>
+                            <strong>{{ sessao.duracao_minutos }} min</strong>
+                        </div>
+                    {% empty %}
+                        <p style="color:gray;">Nenhuma sessão salva nesse dia.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% empty %}
+            <div class="card-custom" style="padding:30px;text-align:center;">
+                <h3>Nenhum histórico encontrado</h3>
+                {% if busca %}
+                    <p style="color:gray;">Nenhum dia foi encontrado para essa busca.</p>
+                    <a href="/historico/" class="link-btn">Ver histórico completo</a>
+                {% else %}
+                    <p style="color:gray;">Use o temporizador no dashboard e clique em Salvar sessão.</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
