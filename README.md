@@ -115,6 +115,16 @@ Cada usuário possui acesso apenas às suas próprias informações, garantindo 
 
 Projeto desenvolvido como atividade acadêmica do Projeto Integrador, com foco em organização dos estudos e produtividade dos usuários.
 
+| Nome                            | Função                        | GitHub                                                  |
+| ------------------------------- | ----------------------------- | ------------------------------------------------------- |
+| Michael Pierre Nintz de Freitas | Product Owner (PO) e Back-end | [MichaelDeFreitas](https://github.com/MichaelDeFreitas) |
+|                                 |                               |                                                         |
+|                                 |                               |                                                         |
+|                                 |                               |                                                         |
+|                                 |                               |                                                         |
+
+
+
 ---
 
 ## 📌 Considerações Finais
