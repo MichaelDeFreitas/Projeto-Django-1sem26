@@ -118,7 +118,7 @@ Projeto desenvolvido como atividade acadêmica do Projeto Integrador, com foco e
 | Nome                            | Função                        | GitHub                                                  |
 | ------------------------------- | ----------------------------- | ------------------------------------------------------- |
 | Michael Pierre Nintz de Freitas | Product Owner (PO) e Back-end | [MichaelDeFreitas](https://github.com/MichaelDeFreitas) |
-|  João Victor Paulino de Jesus      Documentação e Diagramas                          |                               |                                                         |
+|  João Victor Paulino de Jesus      Documentação e Diagramas         [366244jvpaulino](https://github.com/366244jvpaulino).                  |                               |                                                         |
 |                                 |                               |                                                         |
 |                                 |                               |                                                         |
 |                                 |                               |                                                         |
